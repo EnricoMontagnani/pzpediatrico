@@ -22,23 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "So2 (%)", options: [""], openAnswer: true },
                 { question: "FC (bpm)", options: [""], openAnswer: true },
                 { question: "PA (mmHg)", options: [""], openAnswer: true },
-                { question: "Condizioni generali", options: ["buone", "scarse"], openAnswer: true },
-                { question: "Vigile e reattivo?", options: ["Sì", "No"] },
-                { question: "FA normotesa?", options: ["Sì", "No"] },
-                { question: "Capo normoconformato?", options: ["Sì", "No"] },
-                { question: "Eupnoico, buono l’ingresso aereo polmonare bilaterale?", options: ["Sì", "No"] },
-                { question: "Non rientramenti?", options: ["Sì", "No"] },
-                { question: "Toni cardiaci ritmici?", options: ["Sì", "No"] },
-                { question: "Non udibili soffi?", options: ["Sì", "No"] },
-                { question: "Polsi femorali presenti e simmetrici?", options: ["Sì", "No"] },
-                { question: "Addome trattabile?", options: ["Sì", "No"] },
-                { question: "Non dolente?", options: ["Sì", "No"] },
-                { question: "Non apprezabili masse?", options: ["Sì", "No"] },
-                { question: "Genitali esterni normoconformati?", options: ["Sì", "No"] },
-                { question: "Neuromotorio adeguato all’età?", options: ["Sì", "No"] },
-                { question: "Non segni settici né meningei?", options: ["Sì", "No"] },
-                { question: "Red Reflex oculare presente bilateralmente?", options: ["Sì", "No"] },
-                { question: "Manovra di Ortolani negativa bilateralmente?", options: ["Sì", "No"] }
+                { question: "Condizioni generali buone.", options: ["Colorito roseo", "Colorito secondo etnia", "Non visibili esantemi", "Esantema maculo papulare al"], openAnswer: true },
+                { question: "Idratazione conservata, pianto con lacrime.", options: ["Sì", "No"], openAnswer: true },
+                { question: "GCS 15/15. Vigilanza e reattività nella norma.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Sorride, gioca, collaborante, non sofferente.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Neuromotorio conservato, non segni neuromeningei. Buona interazione con l’esaminatore.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Tono e forza adeguati. Non limitazione alla mobilizzazione attiva e passiva del capo.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Eupnea. Non segni di distress respiratorio.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Al torace buon ingresso aereo bilateralmente, non rumori patologici aggiunti, non broncospasmo.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Toni cardiaci validi e ritmici, non soffi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Addome piano trattabile,", options: ["non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente", "Blumberg e Rovsing negativo. Giordano negativo."], openAnswer: true },
+                { question: "Faringe", options: ["roseo deterso", "iperemico", "Tonsille nei limiti"], openAnswer: true },
+                { question: "Otoscopia:", options: ["negativa", "MMTT e CUE bilateralmente indenni", "MMTT non visibili per cerume", "MMTT non visibili per ristrettezza del CUE", "Non segni di otomastoidite"], openAnswer: true },
+                { question: "Linfonodi", options: ["non palpabili nelle csdr", "micropoliadenopatia LC"], openAnswer: true },
+                { question: "Apparato osteoarticolare integro.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Genitali indenni, normoconformati per età e sesso", options: ["Sì", "No"], openAnswer: true },
+                { question: "Riflesso cremasterico presente bilateralmente.", options: ["Sì", "No"], openAnswer: true }
             ]
         },
         lattante: {
@@ -247,11 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
             questions[selectedAgeGroup][section].forEach((item, index) => {
                 const selectedOptions = formData.getAll(`${section}Question${index}`);
                 if (selectedOptions.length > 0) {
-                    const response = selectedOptions.join(', ');
+                    const response = selectedOptions.join('. ') + ".";
                     if (section === 'anamnesi') {
                         anamnesi.push(response);
                     } else if (section === 'esameObiettivo') {
-                        if (item.question.includes("generali")) {
+                        if (item.question.includes("Condizioni generali")) {
                             esameObiettivo.generale.push(response);
                         } else if (item.question.includes("neuromotorio") || item.question.includes("neuromeningei")) {
                             esameObiettivo.neurologico.push(response);
