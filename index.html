@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamnesi ed Esame Obiettivo Pediatrico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Anamnesi ed Esame Obiettivo Pediatrico</h1>
+    
+    <form id="anamnesiForm">
+        <h2>Seleziona l'età del paziente</h2>
+        <label><input type="radio" name="eta" value="neonato">Neonato</label>
+        <label><input type="radio" name="eta" value="lattante">Lattante</label>
+        <label><input type="radio" name="eta" value="bambino">Bambino</label>
+        <label><input type="radio" name="eta" value="adolescente">Adolescente</label>
+        
+        <div id="questionsContainer">
+            <!-- Le domande verranno generate dinamicamente qui -->
+        </div>
+
+        <button type="button" onclick="generateReport()">Genera Report</button>
+    </form>
+
+    <div id="reportContainer">
+        <h2>Report</h2>
+        <pre id="reportOutput"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
