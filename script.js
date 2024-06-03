@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "So2 (%)", options: [""], openAnswer: true },
                 { question: "FC (bpm)", options: [""], openAnswer: true },
                 { question: "PA (mmHg)", options: [""], openAnswer: true },
-                { question: "Condizioni generali?", options: ["Buone", "Scarse"], openAnswer: true },
+                { question: "Condizioni generali", options: ["buone", "scarse"], openAnswer: true },
                 { question: "Vigile e reattivo?", options: ["Sì", "No"] },
                 { question: "FA normotesa?", options: ["Sì", "No"] },
                 { question: "Capo normoconformato?", options: ["Sì", "No"] },
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "So2 (%)", options: [""], openAnswer: true },
                 { question: "FC (bpm)", options: [""], openAnswer: true },
                 { question: "PA (mmHg)", options: [""], openAnswer: true },
-                { question: "Condizioni generali buone. Colorito roseo/secondo etnia. Non visibili esantemi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Condizioni generali buone.", options: ["Colorito roseo", "Colorito secondo etnia", "Non visibili esantemi", "Esantema maculo papulare al"], openAnswer: true },
                 { question: "Idratazione conservata, pianto con lacrime.", options: ["Sì", "No"], openAnswer: true },
                 { question: "GCS 15/15. Vigilanza e reattività nella norma.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Sorride, gioca, collaborante, non sofferente.", options: ["Sì", "No"], openAnswer: true },
@@ -71,13 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "Tono e forza adeguati. Non limitazione alla mobilizzazione attiva e passiva del capo.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Eupnea. Non segni di distress respiratorio.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Al torace buon ingresso aereo bilateralmente, non rumori patologici aggiunti, non broncospasmo.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Toni cardiaci validi e ritmici, non soffi. TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Addome piano/globoso trattabile, non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente. Blumberg e Rovsing negativo. Giordano negativo.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Faringe roseo deterso / lievemente iperemico.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Otoscopia: negativa / MMTT e CUE bilateralmente indenni / MMTT non visibili per cerume, MMTT non visibili per ristrettezza del CUE. Non segni di otomastoidite.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Linfonodi non palpabili nelle csdr / micropoliadenopatia LC.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Toni cardiaci validi e ritmici, non soffi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Addome piano trattabile,", options: ["non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente", "Blumberg e Rovsing negativo. Giordano negativo."], openAnswer: true },
+                { question: "Faringe", options: ["roseo deterso", "iperemico", "Tonsille nei limiti"], openAnswer: true },
+                { question: "Otoscopia:", options: ["negativa", "MMTT e CUE bilateralmente indenni", "MMTT non visibili per cerume", "MMTT non visibili per ristrettezza del CUE", "Non segni di otomastoidite"], openAnswer: true },
+                { question: "Linfonodi", options: ["non palpabili nelle csdr", "micropoliadenopatia LC"], openAnswer: true },
                 { question: "Apparato osteoarticolare integro.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Genitali indenni, normoconformati per età e sesso.", options: ["Sì", "No"], openAnswer: true }
+                { question: "Genitali indenni, normoconformati per età e sesso", options: ["Sì", "No"], openAnswer: true },
+                { question: "Riflesso cremasterico presente bilateralmente.", options: ["Sì", "No"], openAnswer: true }
             ]
         },
         bambino: {
@@ -102,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "So2 (%)", options: [""], openAnswer: true },
                 { question: "FC (bpm)", options: [""], openAnswer: true },
                 { question: "PA (mmHg)", options: [""], openAnswer: true },
-                { question: "Condizioni generali buone. Colorito roseo/secondo etnia. Non visibili esantemi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Condizioni generali buone.", options: ["Colorito roseo", "Colorito secondo etnia", "Non visibili esantemi", "Esantema maculo papulare al"], openAnswer: true },
                 { question: "Idratazione conservata, pianto con lacrime.", options: ["Sì", "No"], openAnswer: true },
                 { question: "GCS 15/15. Vigilanza e reattività nella norma.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Sorride, gioca, collaborante, non sofferente.", options: ["Sì", "No"], openAnswer: true },
@@ -110,13 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "Tono e forza adeguati. Non limitazione alla mobilizzazione attiva e passiva del capo.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Eupnea. Non segni di distress respiratorio.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Al torace buon ingresso aereo bilateralmente, non rumori patologici aggiunti, non broncospasmo.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Toni cardiaci validi e ritmici, non soffi. TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Addome piano/globoso trattabile, non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente. Blumberg e Rovsing negativo. Giordano negativo.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Faringe roseo deterso / lievemente iperemico.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Otoscopia: negativa / MMTT e CUE bilateralmente indenni / MMTT non visibili per cerume, MMTT non visibili per ristrettezza del CUE. Non segni di otomastoidite.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Linfonodi non palpabili nelle csdr / micropoliadenopatia LC.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Toni cardiaci validi e ritmici, non soffi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Addome piano trattabile,", options: ["non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente", "Blumberg e Rovsing negativo. Giordano negativo."], openAnswer: true },
+                { question: "Faringe", options: ["roseo deterso", "iperemico", "Tonsille nei limiti"], openAnswer: true },
+                { question: "Otoscopia:", options: ["negativa", "MMTT e CUE bilateralmente indenni", "MMTT non visibili per cerume", "MMTT non visibili per ristrettezza del CUE", "Non segni di otomastoidite"], openAnswer: true },
+                { question: "Linfonodi", options: ["non palpabili nelle csdr", "micropoliadenopatia LC"], openAnswer: true },
                 { question: "Apparato osteoarticolare integro.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Genitali indenni, normoconformati per età e sesso.", options: ["Sì", "No"], openAnswer: true }
+                { question: "Genitali indenni, normoconformati per età e sesso", options: ["Sì", "No"], openAnswer: true },
+                { question: "Riflesso cremasterico presente bilateralmente.", options: ["Sì", "No"], openAnswer: true }
             ]
         },
         adolescente: {
@@ -141,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "So2 (%)", options: [""], openAnswer: true },
                 { question: "FC (bpm)", options: [""], openAnswer: true },
                 { question: "PA (mmHg)", options: [""], openAnswer: true },
-                { question: "Condizioni generali buone. Colorito roseo/secondo etnia. Non visibili esantemi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Condizioni generali buone.", options: ["Colorito roseo", "Colorito secondo etnia", "Non visibili esantemi", "Esantema maculo papulare al"], openAnswer: true },
                 { question: "Idratazione conservata, pianto con lacrime.", options: ["Sì", "No"], openAnswer: true },
                 { question: "GCS 15/15. Vigilanza e reattività nella norma.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Sorride, gioca, collaborante, non sofferente.", options: ["Sì", "No"], openAnswer: true },
@@ -149,13 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 { question: "Tono e forza adeguati. Non limitazione alla mobilizzazione attiva e passiva del capo.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Eupnea. Non segni di distress respiratorio.", options: ["Sì", "No"], openAnswer: true },
                 { question: "Al torace buon ingresso aereo bilateralmente, non rumori patologici aggiunti, non broncospasmo.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Toni cardiaci validi e ritmici, non soffi. TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Addome piano/globoso trattabile, non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente. Blumberg e Rovsing negativo. Giordano negativo.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Faringe roseo deterso / lievemente iperemico.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Otoscopia: negativa / MMTT e CUE bilateralmente indenni / MMTT non visibili per cerume, MMTT non visibili per ristrettezza del CUE. Non segni di otomastoidite.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Linfonodi non palpabili nelle csdr / micropoliadenopatia LC.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Toni cardiaci validi e ritmici, non soffi.", options: ["Sì", "No"], openAnswer: true },
+                { question: "TR<2”. Polsi centrali e periferici eusfigmici. Estremità calde.", options: ["Sì", "No"], openAnswer: true },
+                { question: "Addome piano trattabile,", options: ["non dolente né dolorabile alla palpazione S/P, OI nei limiti, peristalsi presente", "Blumberg e Rovsing negativo. Giordano negativo."], openAnswer: true },
+                { question: "Faringe", options: ["roseo deterso", "iperemico", "Tonsille nei limiti"], openAnswer: true },
+                { question: "Otoscopia:", options: ["negativa", "MMTT e CUE bilateralmente indenni", "MMTT non visibili per cerume", "MMTT non visibili per ristrettezza del CUE", "Non segni di otomastoidite"], openAnswer: true },
+                { question: "Linfonodi", options: ["non palpabili nelle csdr", "micropoliadenopatia LC"], openAnswer: true },
                 { question: "Apparato osteoarticolare integro.", options: ["Sì", "No"], openAnswer: true },
-                { question: "Genitali indenni, normoconformati per età e sesso.", options: ["Sì", "No"], openAnswer: true }
+                { question: "Genitali indenni, normoconformati per età e sesso", options: ["Sì", "No"], openAnswer: true },
+                { question: "Riflesso cremasterico presente bilateralmente.", options: ["Sì", "No"], openAnswer: true }
             ]
         }
     };
@@ -245,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (section === 'anamnesi') {
                         anamnesi.push(response);
                     } else if (section === 'esameObiettivo') {
-                        if (item.question.includes("Condizioni generali") || item.question.includes("generali")) {
+                        if (item.question.includes("generali")) {
                             esameObiettivo.generale.push(response);
                         } else if (item.question.includes("neuromotorio") || item.question.includes("neuromeningei")) {
                             esameObiettivo.neurologico.push(response);
