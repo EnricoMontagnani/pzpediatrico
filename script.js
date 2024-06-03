@@ -224,18 +224,46 @@ document.addEventListener('DOMContentLoaded', () => {
         let report = `Anamnesi ed Esame Obiettivo per ${selectedAgeGroup}:\n\n`;
 
         const anamnesi = [];
-        const esameObiettivo = [];
+        const esameObiettivo = {
+            generale: [],
+            neurologico: [],
+            cardiocircolatorio: [],
+            respiratorio: [],
+            addome: [],
+            faringe: [],
+            orecchie: [],
+            osteoarticolare: [],
+            genitali: []
+        };
 
         const sections = ['anamnesi', 'esameObiettivo'];
         sections.forEach(section => {
             questions[selectedAgeGroup][section].forEach((item, index) => {
                 const selectedOptions = formData.getAll(`${section}Question${index}`);
                 if (selectedOptions.length > 0) {
-                    const response = `${item.question} ${selectedOptions.join(', ')}`;
+                    const response = selectedOptions.join(', ');
                     if (section === 'anamnesi') {
                         anamnesi.push(response);
                     } else if (section === 'esameObiettivo') {
-                        esameObiettivo.push(response);
+                        if (item.question.includes("Condizioni generali") || item.question.includes("generali")) {
+                            esameObiettivo.generale.push(response);
+                        } else if (item.question.includes("neuromotorio") || item.question.includes("neuromeningei")) {
+                            esameObiettivo.neurologico.push(response);
+                        } else if (item.question.includes("Toni cardiaci") || item.question.includes("Polsi")) {
+                            esameObiettivo.cardiocircolatorio.push(response);
+                        } else if (item.question.includes("Eupnea") || item.question.includes("torace")) {
+                            esameObiettivo.respiratorio.push(response);
+                        } else if (item.question.includes("Addome") || item.question.includes("palpazione")) {
+                            esameObiettivo.addome.push(response);
+                        } else if (item.question.includes("Faringe")) {
+                            esameObiettivo.faringe.push(response);
+                        } else if (item.question.includes("Otoscopia")) {
+                            esameObiettivo.orecchie.push(response);
+                        } else if (item.question.includes("ostearticolare")) {
+                            esameObiettivo.osteoarticolare.push(response);
+                        } else if (item.question.includes("Genitali")) {
+                            esameObiettivo.genitali.push(response);
+                        }
                     }
                 }
             });
@@ -246,10 +274,16 @@ document.addEventListener('DOMContentLoaded', () => {
             report += anamnesi.join(". ") + ".\n\n";
         }
 
-        if (esameObiettivo.length > 0) {
-            report += "Esame Obiettivo:\n";
-            report += esameObiettivo.join(". ") + ".\n";
-        }
+        report += "Esame Obiettivo:\n";
+        report += "Generale: " + esameObiettivo.generale.join(". ") + ".\n\n";
+        report += "Neurologico: " + esameObiettivo.neurologico.join(". ") + ".\n\n";
+        report += "Cardiocircolatorio: " + esameObiettivo.cardiocircolatorio.join(". ") + ".\n\n";
+        report += "Respiratorio: " + esameObiettivo.respiratorio.join(". ") + ".\n\n";
+        report += "Addome: " + esameObiettivo.addome.join(". ") + ".\n\n";
+        report += "Faringe: " + esameObiettivo.faringe.join(". ") + ".\n\n";
+        report += "Orecchie: " + esameObiettivo.orecchie.join(". ") + ".\n\n";
+        report += "Osteoarticolare: " + esameObiettivo.osteoarticolare.join(". ") + ".\n\n";
+        report += "Genitali: " + esameObiettivo.genitali.join(". ") + ".\n";
 
         reportOutput.textContent = report;
     }
