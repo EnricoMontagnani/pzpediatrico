@@ -21,9 +21,24 @@ label {
     margin-bottom: 20px;
 }
 
+.questionWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.questionWrapper label {
+    width: 50%;
+    box-sizing: border-box;
+}
+
 #reportContainer {
     margin-top: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
+    page-break-inside: avoid; /* To ensure report fits in one page if possible */
+}
+
+.hidden {
+    display: none;
 }
