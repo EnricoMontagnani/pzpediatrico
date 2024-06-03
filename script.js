@@ -271,20 +271,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (anamnesi.length > 0) {
             report += "Anamnesi:\n";
-            report += anamnesi.join(". ") + ".\n\n";
+            report += anamnesi.join(".\n") + ".\n\n";
         }
 
         report += "Esame Obiettivo:\n";
-        report += "Generale: " + esameObiettivo.generale.join(". ") + ".\n\n";
-        report += "Neurologico: " + esameObiettivo.neurologico.join(". ") + ".\n\n";
-        report += "Cardiocircolatorio: " + esameObiettivo.cardiocircolatorio.join(". ") + ".\n\n";
-        report += "Respiratorio: " + esameObiettivo.respiratorio.join(". ") + ".\n\n";
-        report += "Addome: " + esameObiettivo.addome.join(". ") + ".\n\n";
-        report += "Faringe: " + esameObiettivo.faringe.join(". ") + ".\n\n";
-        report += "Orecchie: " + esameObiettivo.orecchie.join(". ") + ".\n\n";
-        report += "Osteoarticolare: " + esameObiettivo.osteoarticolare.join(". ") + ".\n\n";
-        report += "Genitali: " + esameObiettivo.genitali.join(". ") + ".\n";
+        if (esameObiettivo.generale.length > 0) report += "Generale: " + esameObiettivo.generale.join(".\n") + ".\n\n";
+        if (esameObiettivo.neurologico.length > 0) report += "Neurologico: " + esameObiettivo.neurologico.join(".\n") + ".\n\n";
+        if (esameObiettivo.cardiocircolatorio.length > 0) report += "Cardiocircolatorio: " + esameObiettivo.cardiocircolatorio.join(".\n") + ".\n\n";
+        if (esameObiettivo.respiratorio.length > 0) report += "Respiratorio: " + esameObiettivo.respiratorio.join(".\n") + ".\n\n";
+        if (esameObiettivo.addome.length > 0) report += "Addome: " + esameObiettivo.addome.join(".\n") + ".\n\n";
+        if (esameObiettivo.faringe.length > 0) report += "Faringe: " + esameObiettivo.faringe.join(".\n") + ".\n\n";
+        if (esameObiettivo.orecchie.length > 0) report += "Orecchie: " + esameObiettivo.orecchie.join(".\n") + ".\n\n";
+        if (esameObiettivo.osteoarticolare.length > 0) report += "Osteoarticolare: " + esameObiettivo.osteoarticolare.join(".\n") + ".\n\n";
+        if (esameObiettivo.genitali.length > 0) report += "Genitali: " + esameObiettivo.genitali.join(".\n") + ".\n";
 
-        reportOutput.textContent = report;
+        reportOutput.textContent = report.trim();
+    }
+
+    window.copyReport = function() {
+        const reportText = document.getElementById('reportOutput').textContent;
+        navigator.clipboard.writeText(reportText).then(() => {
+            alert('Report copiato negli appunti!');
+        }).catch(err => {
+            console.error('Errore nel copiare il report: ', err);
+        });
     }
 });
